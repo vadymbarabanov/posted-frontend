@@ -11,6 +11,7 @@
   },
   "lint-staged": {
     "**/*.{scss,sass,css}": [
+      "npx prettier --write",
       "npx stylelint"
     ],
     "**/*.{js,jsx,ts,tsx}": [
