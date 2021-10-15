@@ -15,7 +15,7 @@
     ],
     "**/*.{js,jsx,ts,tsx}": [
       "npx prettier --write",
-      "npx eslint"
+      "yarn lint"
     ]
   },
   "dependencies": {
