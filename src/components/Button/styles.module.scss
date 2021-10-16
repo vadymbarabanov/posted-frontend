@@ -1,0 +1,38 @@
+@import 'styles/variables';
+
+.button {
+  position: relative;
+  padding: 0.2rem 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  background-color: $secondary-color;
+  border: $thickness solid $primary-color;
+}
+
+.button::before {
+  position: absolute;
+  left: 50%;
+  z-index: -1;
+  width: 10px;
+  height: 10px;
+  content: '';
+  background-color: $primary-color;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 150ms ease-out;
+  transform: translate(-50%);
+}
+
+.button:not(.disabled):hover::before {
+  opacity: 1;
+  transform: translate(-50%, -210%);
+}
+
+.button.disabled {
+  opacity: 0.4;
+}
+
+.primary {
+  color: $secondary-color;
+  background-color: $primary-color;
+}
