@@ -1,0 +1,8 @@
+@import 'styles/variables';
+
+.content {
+  max-width: $desktop;
+  min-height: 100vh;
+  padding-top: 5rem;
+  margin-inline: auto;
+}
