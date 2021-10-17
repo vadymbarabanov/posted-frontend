@@ -1,7 +1,12 @@
 @import 'styles/variables';
+@import 'styles/mixins';
 
 .wrapper {
   max-width: $desktop;
   height: 100%;
   margin-inline: auto;
+
+  @include media-down($desktop + 76px) {
+    padding-inline: 2rem;
+  }
 }
