@@ -1,0 +1,13 @@
+@import 'styles/variables';
+
+.wrapper {
+  color: $secondary-color;
+  background-color: $primary-color;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 2rem;
+}
