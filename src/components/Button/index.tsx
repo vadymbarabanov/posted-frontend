@@ -1,4 +1,4 @@
-import React, { FC, ButtonHTMLAttributes, ReactElement } from 'react'
+import React, { FC, ButtonHTMLAttributes } from 'react'
 import styles from './styles.module.scss'
 import clsx from 'clsx'
 
