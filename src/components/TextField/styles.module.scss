@@ -1,0 +1,31 @@
+@import 'styles/variables';
+
+$input-width: 320px;
+$input-height: 44px;
+
+.wrapper {
+  max-width: $input-width;
+}
+
+.wrapper.invalid {
+  .textfield {
+    color: $error-color;
+    border: $thickness solid $error-color;
+  }
+
+  .label {
+    color: $error-color;
+  }
+}
+
+.textfield {
+  width: $input-width;
+  height: $input-height;
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  border: $thickness solid $primary-color;
+}
+
+.label {
+  display: block;
+}
