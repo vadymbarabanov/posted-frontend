@@ -1,0 +1,7 @@
+@import 'styles/variables';
+
+.wrapper {
+  max-width: $desktop;
+  height: 100%;
+  margin-inline: auto;
+}
