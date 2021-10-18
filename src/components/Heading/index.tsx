@@ -5,18 +5,24 @@ import styles from './styles.module.scss'
 type HeadingProps = {
   variant: 'h1' | 'h2' | 'h3'
   fontSize?: 'sm' | 'md' | 'lg'
+  align?: 'left' | 'center' | 'right'
 }
 
 export const Heading: FC<HeadingProps> = ({
   variant,
   fontSize = 'md',
   children,
+  align = 'left',
   ...props
 }) => {
   const classnames = clsx({
     [styles.sm]: fontSize === 'sm',
     [styles.md]: fontSize === 'md',
     [styles.lg]: fontSize === 'lg',
+
+    [styles.alignLeft]: align === 'left',
+    [styles.alignCenter]: align === 'center',
+    [styles.alignRight]: align === 'right',
   })
 
   switch (variant) {
