@@ -13,41 +13,23 @@ export const Heading: FC<HeadingProps> = ({
   fontSize = 'md',
   children,
   align = 'left',
-  ...props
 }) => {
-  const classnames = clsx({
-    [styles.sm]: fontSize === 'sm',
-    [styles.md]: fontSize === 'md',
-    [styles.lg]: fontSize === 'lg',
-
-    [styles.alignLeft]: align === 'left',
-    [styles.alignCenter]: align === 'center',
-    [styles.alignRight]: align === 'right',
+  const classnames = clsx(styles.heading, {
+    [styles[`heading__fontSize--${fontSize}`]]: fontSize,
+    [styles[`heading__align--${align}`]]: align,
   })
 
   switch (variant) {
     case 'h1': {
-      return (
-        <h1 className={classnames} {...props}>
-          {children}
-        </h1>
-      )
+      return <h1 className={classnames}>{children}</h1>
     }
 
     case 'h2': {
-      return (
-        <h2 className={classnames} {...props}>
-          {children}
-        </h2>
-      )
+      return <h2 className={classnames}>{children}</h2>
     }
 
     case 'h3': {
-      return (
-        <h3 className={classnames} {...props}>
-          {children}
-        </h3>
-      )
+      return <h3 className={classnames}>{children}</h3>
     }
   }
 }

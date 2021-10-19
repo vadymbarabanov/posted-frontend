@@ -1,23 +1,20 @@
-.sm {
-  font-size: 1.4rem;
-}
+$font-size: (
+  'sm': 1.4rem,
+  'md': 2rem,
+  'lg': 2.5rem,
+);
+$align: (left, center, right);
 
-.md {
-  font-size: 2rem;
-}
+.heading {
+  @each $name, $value in $font-size {
+    &__fontSize--#{$name} {
+      font-size: $value;
+    }
+  }
 
-.lg {
-  font-size: 2.5rem;
-}
-
-.alignLeft {
-  text-align: left;
-}
-
-.alignCenter {
-  text-align: center;
-}
-
-.alignRight {
-  text-align: right;
+  @each $value in $align {
+    &__align--#{$value} {
+      text-align: $value;
+    }
+  }
 }
