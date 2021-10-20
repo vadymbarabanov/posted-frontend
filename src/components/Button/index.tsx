@@ -11,9 +11,10 @@ export const Button: FC<ButtonProps> = ({
   primary = false,
   disabled = false,
   children,
+  className,
   ...props
 }) => {
-  const classnames = clsx(styles.button, {
+  const classnames = clsx(styles.button, className, {
     [styles.primary]: primary,
     [styles.disabled]: disabled,
   })
