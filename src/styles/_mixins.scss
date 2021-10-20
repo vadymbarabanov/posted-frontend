@@ -9,3 +9,62 @@
     @content;
   }
 }
+
+@mixin boxsizes() {
+  $boxsizes: (
+    'full': 100%,
+    'auto': auto,
+  );
+
+  .width--screen {
+    width: 100vw;
+  }
+
+  .height--screen {
+    height: 100vh;
+  }
+
+  @each $name, $value in $boxsizes {
+    .width--#{$name} {
+      width: $value;
+    }
+
+    .height--#{$name} {
+      height: $value;
+    }
+  }
+}
+
+@mixin margins() {
+  $margins: (
+    'sm': 0.5rem,
+    'md': 1rem,
+    'lg': 2rem,
+    'full': 100%,
+    'auto': auto,
+  );
+
+  @each $name, $value in $margins {
+    .mt--#{$name} {
+      margin-top: $value;
+    }
+  }
+
+  @each $name, $value in $margins {
+    .mb--#{$name} {
+      margin-bottom: $value;
+    }
+  }
+
+  @each $name, $value in $margins {
+    .mr--#{$name} {
+      margin-right: $value;
+    }
+  }
+
+  @each $name, $value in $margins {
+    .ml--#{$name} {
+      margin-left: $value;
+    }
+  }
+}
