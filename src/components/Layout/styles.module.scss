@@ -1,5 +1,9 @@
 @import 'styles/variables';
 
+.wrapper {
+  position: relative;
+}
+
 .content {
   min-height: 100vh;
   padding-top: 5rem;

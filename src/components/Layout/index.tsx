@@ -6,7 +6,7 @@ import { Container } from './Container'
 
 export const Layout: FC = ({ children }) => {
   return (
-    <div>
+    <div className={styles.wrapper}>
       <Navbar />
       <Container>
         <main className={styles.content}>{children}</main>

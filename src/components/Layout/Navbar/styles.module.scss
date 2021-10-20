@@ -1,4 +1,5 @@
 @import 'styles/variables';
+@import 'styles/mixins';
 
 .wrapper {
   position: fixed;
@@ -15,6 +16,54 @@
   height: 100%;
 }
 
-.buttonContainer > button {
+.authButtons {
+  @include media-down($mobile) {
+    display: none;
+  }
+}
+
+.authButtons > button {
   margin-left: 20px;
+}
+
+.mobileNav {
+  @include media-up($mobile) {
+    display: none;
+  }
+}
+
+.navMenu {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 3rem;
+  background-color: #fff;
+}
+
+.arrowButton {
+  position: relative;
+  width: 1.5rem;
+  height: $thickness;
+  margin-left: auto;
+  background-color: $primary-color;
+}
+
+@mixin arrow-pseudo-elem($rotate) {
+  position: absolute;
+  right: 0;
+  display: block;
+  width: 1rem;
+  height: $thickness;
+  content: '';
+  background-color: $primary-color;
+  transform: rotate($rotate);
+  transform-origin: right;
+}
+
+.arrowButton::before {
+  @include arrow-pseudo-elem(45deg);
+}
+
+.arrowButton::after {
+  @include arrow-pseudo-elem(-45deg);
 }
