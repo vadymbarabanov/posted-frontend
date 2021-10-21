@@ -16,6 +16,10 @@ $input-height: 44px;
   .label {
     color: $error-color;
   }
+
+  .helperText {
+    color: $error-color;
+  }
 }
 
 .textfield {
@@ -27,6 +31,16 @@ $input-height: 44px;
   border: $thickness solid $primary-color;
 }
 
+.textfield[type='password'] {
+  font-size: 2rem;
+}
+
 .label {
   display: block;
+  margin-bottom: 0.4rem;
+}
+
+.helperText {
+  display: block;
+  margin-top: 0.4rem;
 }
