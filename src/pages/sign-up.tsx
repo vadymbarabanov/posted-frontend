@@ -4,6 +4,7 @@ import { Flex } from 'components/Flex'
 import { TextField } from 'components/TextField'
 import { Button } from 'components/Button'
 import { useForm } from 'react-hook-form'
+import Validation from 'helpers/validation'
 
 const SignUp = () => {
   const {
@@ -19,7 +20,7 @@ const SignUp = () => {
 
   return (
     <Layout>
-      <Heading variant="h2" fontSize="lg" align="center">
+      <Heading mt="lg" variant="h2" fontSize="lg" align="center">
         Sign Up
       </Heading>
       <form onSubmit={onSubmit}>
@@ -35,7 +36,7 @@ const SignUp = () => {
             invalid={!!errors.username}
             helperText={errors.username?.message}
             {...register('username', {
-              required: { value: true, message: 'This field is required' },
+              required: Validation.RULE.REQUIRED,
             })}
           />
           <TextField
@@ -43,11 +44,8 @@ const SignUp = () => {
             invalid={!!errors.email}
             helperText={errors.email?.message}
             {...register('email', {
-              required: { value: true, message: 'This field is required' },
-              minLength: {
-                value: 3,
-                message: 'This field should be at least 3 characters',
-              },
+              required: Validation.RULE.REQUIRED,
+              minLength: Validation.minLength(4),
             })}
           />
           <TextField
@@ -55,12 +53,12 @@ const SignUp = () => {
             type="password"
             invalid={!!errors.password}
             helperText={errors.password?.message}
-            {...register('password', {
-              required: { value: true, message: 'This field is required' },
-            })}
+            {...register('password', Validation.FOR.PASSWORD)}
           />
           <Flex justifyContent="center">
-            <Button type="submit">Sign Up</Button>
+            <Button primary type="submit">
+              Sign Up
+            </Button>
           </Flex>
         </Flex>
       </form>
