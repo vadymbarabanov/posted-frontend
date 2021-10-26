@@ -36,7 +36,10 @@ const SignUp = () => {
             invalid={!!errors.username}
             helperText={errors.username?.message}
             {...register('username', {
-              required: Validation.RULE.REQUIRED,
+              required: Validation.required,
+              pattern: Validation.pattern.username,
+              minLength: Validation.minLength(3),
+              maxLength: Validation.maxLength(16),
             })}
           />
           <TextField
@@ -44,8 +47,8 @@ const SignUp = () => {
             invalid={!!errors.email}
             helperText={errors.email?.message}
             {...register('email', {
-              required: Validation.RULE.REQUIRED,
-              minLength: Validation.minLength(4),
+              required: Validation.required,
+              pattern: Validation.pattern.email,
             })}
           />
           <TextField
@@ -53,7 +56,11 @@ const SignUp = () => {
             type="password"
             invalid={!!errors.password}
             helperText={errors.password?.message}
-            {...register('password', Validation.FOR.PASSWORD)}
+            {...register('password', {
+              required: Validation.required,
+              minLength: Validation.minLength(6),
+              maxLength: Validation.maxLength(20),
+            })}
           />
           <Flex justifyContent="center">
             <Button primary type="submit">
