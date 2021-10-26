@@ -1,19 +1,23 @@
+import { VALID_EMAIL, VALID_USERNAME } from './patterns'
+
 type MinMaxMessageCallback = (len: number) => string
 
 class Validation {
-  RULE = {
-    REQUIRED: {
-      value: true,
-      message: 'This field is required',
-    },
+  required = {
+    value: true,
+    message: 'This field is required',
   } as const
 
-  FOR = {
-    PASSWORD: {
-      required: this.RULE.REQUIRED,
-      minLength: this.minLength(5),
+  pattern = {
+    email: {
+      value: VALID_EMAIL,
+      message: 'Email is invalid',
     },
-  }
+    username: {
+      value: VALID_USERNAME,
+      message: 'Only latin characters, numbers and underscores are allowed',
+    },
+  } as const
 
   minLength(
     len: number,
