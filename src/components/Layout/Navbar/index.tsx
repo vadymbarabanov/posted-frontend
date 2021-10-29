@@ -5,6 +5,8 @@ import { Container } from '../Container'
 import styles from './styles.module.scss'
 import { Flex } from 'components/Flex'
 import { AuthButtons } from './AuthButtons'
+import userIcon from 'assets/icons/user.svg'
+import { Icon } from 'components/Icon'
 
 export const Navbar: FC = () => {
   const [navOpen, setNavOpen] = useState(false)
@@ -19,9 +21,10 @@ export const Navbar: FC = () => {
         <Container>
           <div className={styles.content}>
             <Logo />
-            <div className={styles.authButtons}>
+            <Flex alignItems="center" className={styles.authButtons}>
+              <Icon src={userIcon} />
               <AuthButtons />
-            </div>
+            </Flex>
             <div className={styles.mobileNav}>
               <Button onClick={toggleNavMenu} className={styles.navButton}>
                 Menu
