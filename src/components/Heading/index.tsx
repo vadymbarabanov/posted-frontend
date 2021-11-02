@@ -1,17 +1,13 @@
 import { FC } from 'react'
 import clsx from 'clsx'
 import styles from './styles.module.scss'
-import { Margins } from 'types/styles'
+import { MarginsSet } from 'types/styles'
 
 type HeadingProps = {
   variant: 'h1' | 'h2' | 'h3'
   fontSize?: 'sm' | 'md' | 'lg'
   align?: 'left' | 'center' | 'right'
-  mt?: Margins
-  mr?: Margins
-  mb?: Margins
-  ml?: Margins
-}
+} & MarginsSet
 
 export const Heading: FC<HeadingProps> = ({
   variant,

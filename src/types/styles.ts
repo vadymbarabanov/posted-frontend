@@ -1,4 +1,10 @@
 export type Margins = 'sm' | 'md' | 'lg' | 'full' | 'auto'
+export type MarginsSet = {
+  mt?: Margins
+  mr?: Margins
+  mb?: Margins
+  ml?: Margins
+}
 export type BoxSizes = 'full' | 'auto' | 'screen'
 export type Direction = 'row' | 'column' | 'row-reverse' | 'column-reverse'
 export type Gap = 'sm' | 'md' | 'lg'
