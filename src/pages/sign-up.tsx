@@ -39,7 +39,7 @@ const SignUp = () => {
               required: Validation.required,
               pattern: Validation.pattern.username,
               minLength: Validation.minLength(3),
-              maxLength: Validation.maxLength(16),
+              maxLength: Validation.maxLength(36),
             })}
           />
           <TextField
@@ -59,7 +59,7 @@ const SignUp = () => {
             {...register('password', {
               required: Validation.required,
               minLength: Validation.minLength(6),
-              maxLength: Validation.maxLength(20),
+              maxLength: Validation.maxLength(255),
             })}
           />
           <Flex justifyContent="center">
