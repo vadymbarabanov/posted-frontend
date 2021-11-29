@@ -7,7 +7,7 @@ import {
   Direction,
   Gap,
   JustifyContent,
-  Margins,
+  MarginsSet,
 } from 'types/styles'
 
 type FlexProps = {
@@ -16,14 +16,10 @@ type FlexProps = {
   alignItems?: AlignItems
   vGap?: Gap
   hGap?: Gap
-  mt?: Margins
-  mr?: Margins
-  mb?: Margins
-  ml?: Margins
   width?: BoxSizes
   height?: BoxSizes
   className?: string
-}
+} & MarginsSet
 
 export const Flex: FC<FlexProps> = ({
   direction = 'row',

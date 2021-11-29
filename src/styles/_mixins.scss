@@ -5,7 +5,7 @@
 }
 
 @mixin media-down($breakpoint) {
-  @media screen and (max-width: $breakpoint - 1px) {
+  @media screen and (max-width: ($breakpoint - 1px)) {
     @content;
   }
 }
@@ -36,6 +36,12 @@
 }
 
 @mixin margins() {
+  $props: (
+    'mt': 'top',
+    'mr': 'right',
+    'mb': 'bottom',
+    'ml': 'left',
+  );
   $margins: (
     'sm': 0.5rem,
     'md': 1rem,
@@ -44,27 +50,11 @@
     'auto': auto,
   );
 
-  @each $name, $value in $margins {
-    .mt--#{$name} {
-      margin-top: $value;
-    }
-  }
-
-  @each $name, $value in $margins {
-    .mb--#{$name} {
-      margin-bottom: $value;
-    }
-  }
-
-  @each $name, $value in $margins {
-    .mr--#{$name} {
-      margin-right: $value;
-    }
-  }
-
-  @each $name, $value in $margins {
-    .ml--#{$name} {
-      margin-left: $value;
+  @each $prop-name, $direction in $props {
+    @each $prop-value, $unit in $margins {
+      .#{$prop-name}--#{$prop-value} {
+        margin-#{$direction}: $unit;
+      }
     }
   }
 }
